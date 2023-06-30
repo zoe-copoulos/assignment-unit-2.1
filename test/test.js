@@ -60,8 +60,8 @@ describe('Automated tests', function () {
             expect(fullName, 'Expected fullName to be a string').to.exist;
             expect(fullName).to.be.a('string');
             expect(fullName.length).to.be.greaterThan(0);
-            assert.equal(fullName.includes(firstName), true);
-            assert.equal(fullName.includes(lastName), true);
+            expect(fullName.includes(firstName), 'Expected fullName to include firstName').to.equal(true);
+            expect(fullName.includes(lastName), 'Expected fullName to include lastName').to.equal(true);
         });
     });
     describe(`Lucky Number assigned to Number`, function () {
@@ -121,9 +121,9 @@ describe('Automated tests', function () {
             let { result, adventurous } = testItems;
             expect(result).to.be.a('string');
             if (adventurous) {
-                expect(result).to.be('Adventures are great!');
+                expect(result).to.equal('Adventures are great!');
             } else {
-                expect(result).to.be('How about we stay home?');
+                expect(result).to.equal('How about we stay home?');
             }
         });
     });
@@ -132,9 +132,9 @@ describe('Automated tests', function () {
             let { diceRoll, luckyNumber, adventurous } = testItems;
             expect(diceRoll).to.be.a('string');
             if (luckyNumber === 2 && adventurous) {
-                expect(result).to.be('Roll the dice!');
+                expect(result).to.equal('Roll the dice!');
             } else {
-                expect(result).to.be('Try again later.');
+                expect(result).to.equal('Try again later.');
             }
         });
     });
@@ -143,11 +143,26 @@ describe('Automated tests', function () {
             let { petStatus, pets, allowedPets } = testItems;
             expect(petStatus).to.be.a('string');
             if (pets === allowedPets) {
-                expect(result).to.be('I have enough pets');
+                expect(result).to.equal('I have enough pets');
             } else if (pets > allowedPets) {
-                expect(result).to.be('I can have more pets');
+                expect(result).to.equal('I can have more pets');
             } else if (pets < allowedPets) {
-                expect(result).to.be('Oh no, I have too many pets!');
+                expect(result).to.equal('Oh no, I have too many pets!');
+            }
+        });
+    });
+    describe(`STRETCH: Most pets is assigned to the correct value`, function () {
+        it(`STRETCH: Most pets is assigned to the correct value`, function () {
+            if (mostPets === undefined) {
+                this.skip()
+            } else {
+                let { mostPets, pets, friendsPets } = testItems;
+                expect(mostPets).to.be.a('number');
+                if (friendsPets > pets) {
+                    expect(mostPets).to.equal(friendsPets);
+                } else {
+                    expect(mostPets).to.equal(pets);
+                }
             }
         });
     });
