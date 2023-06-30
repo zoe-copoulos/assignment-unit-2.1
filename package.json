@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter test/reporter.js"
   },
   "repository": {
     "type": "git",
@@ -12,8 +12,8 @@
   },
   "author": "Prime Digital Academy",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PrimeAcademy/prime-pw-week-2-assignment-part-1/issues"
-  },
-  "homepage": "https://github.com/PrimeAcademy/prime-pw-week-2-assignment-part-1#readme"
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
 }
