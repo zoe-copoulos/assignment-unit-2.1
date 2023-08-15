@@ -33,8 +33,18 @@ class MyReporter {
             .once(EVENT_RUN_BEGIN, () => {
                 console.log('');
                 console.log(`---
-| Part 1 - Function Practice | Complete? |
+| Part 1 -- aboutMe.js | Complete? |
 | --- | :---: |`);
+                console.log(
+                    `\x1b[32m`,
+                    `| OPTIONAL: Questions in HTML | - |`,
+                    `\x1b[0m`
+                );
+                console.log(
+                    `\x1b[32m`,
+                    `| Use of let/const, no use of var | - |`,
+                    `\x1b[0m`
+                );
                 console.log(
                     `\x1b[32m`,
                     `| Runs in browser without console errors | yes |`,

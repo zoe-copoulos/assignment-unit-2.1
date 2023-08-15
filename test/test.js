@@ -43,7 +43,7 @@ describe('Automated tests', function () {
             let { firstName } = testItems;
             expect(firstName, 'Expected firstName to be a string').to.exist;
             expect(firstName).to.be.a('string');
-            expect(firstName.length).to.be.greaterThan(0);
+            expect(firstName.length, 'Expected firstName to have a value').to.be.greaterThan(0);
         });
     });
     describe(`Last Name assigned to String`, function () {
@@ -77,8 +77,8 @@ describe('Automated tests', function () {
             expect(introduction, 'Expected introduction to be a string').to.exist;
             expect(introduction).to.be.a('string');
             expect(introduction.length).to.be.greaterThan(0);
-            assert.equal(introduction.includes(fullName), true);
-            assert.equal(introduction.includes(luckyNumber), true);
+            expect(introduction.includes(fullName), 'Expected introduction to include full name.').to.equal(true);
+            expect(introduction.includes(luckyNumber), 'Expected introduction to include lucky number.').to.equal(true);
         });
     });
     describe(`Adventurous assigned to Boolean`, function () {
@@ -153,6 +153,7 @@ describe('Automated tests', function () {
     });
     describe(`STRETCH: Most pets is assigned to the correct value`, function () {
         it(`STRETCH: Most pets is assigned to the correct value`, function () {
+            let { mostPets } = testItems;
             if (mostPets === undefined) {
                 this.skip()
             } else {
