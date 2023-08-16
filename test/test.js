@@ -132,9 +132,9 @@ describe('Automated tests', function () {
             let { diceRoll, luckyNumber, adventurous } = testItems;
             expect(diceRoll).to.be.a('string');
             if (luckyNumber === 2 && adventurous) {
-                expect(result).to.equal('Roll the dice!');
+                expect(diceRoll).to.equal('Roll the dice!');
             } else {
-                expect(result).to.equal('Try again later.');
+                expect(diceRoll).to.equal('Try again later.');
             }
         });
     });
@@ -143,11 +143,11 @@ describe('Automated tests', function () {
             let { petStatus, pets, allowedPets } = testItems;
             expect(petStatus).to.be.a('string');
             if (pets === allowedPets) {
-                expect(result).to.equal('I have enough pets');
+                expect(petStatus).to.equal('I have enough pets');
             } else if (pets > allowedPets) {
-                expect(result).to.equal('I can have more pets');
+                expect(petStatus).to.equal('I can have more pets');
             } else if (pets < allowedPets) {
-                expect(result).to.equal('Oh no, I have too many pets!');
+                expect(petStatus).to.equal('Oh no, I have too many pets!');
             }
         });
     });
