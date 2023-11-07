@@ -167,6 +167,28 @@ describe('Automated tests', function () {
             }
         });
     });
+    describe(`STRETCH: luckyResult is assigned to the correct value`, function () {
+        it(`STRETCH: luckyResult is assigned to the correct value`, function () {
+            let { luckyResult } = testItems;
+            if (luckyResult === undefined) {
+                this.skip()
+            } else {
+                let { luckyNumber, luckyResult } = testItems;
+                expect(luckyNumber).to.be.a('number');
+                expect(luckyResult).to.be.a('string');
+                if(luckyNumber === 1) {
+                    expect(luckyResult).to.equal('First is the worst')
+                }
+                else if(luckyNumber === 2) {
+                    expect(luckyResult).to.equal('Second is the best')
+                } else if (luckyNumber === 3) {
+                    expect(luckyResult).to.equal('Third is the one with the polka dot dress')
+                } else {
+                    expect(luckyResult).to.equal('Luck is what happens when preparation meets opportunity')
+                }
+            }
+        });
+    });
 });
 
 /**
