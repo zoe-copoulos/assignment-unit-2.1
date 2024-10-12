@@ -66,7 +66,7 @@ if (adventurous) {
 //      set `diceRoll` to be "Roll the dice!"
 //      Console log the value of `diceRoll`
 let diceRoll = 'Try again later.';
-if (luckyNumber == 2 && adventurous == true) {
+if (luckyNumber == 7 && adventurous == true) { // a bit confused still, but I am thinking I was supposed to use my chosen lucky number
   console.log( diceRoll );
 } else {
   console.log( 'Roll the dice!')
