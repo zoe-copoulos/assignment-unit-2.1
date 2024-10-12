@@ -80,14 +80,13 @@ if (luckyNumber == 2 && adventurous == true) {
 //      set `petStatus` to the value of "I have enough pets" 
 //      if the value of `pets` is greater than the value of `allowedPets`.
 //      set `petStatus` to the value of "Oh no, I have too many pets!"
-let petStatus = 'I can have more pets';
+let petStatus;
 
-if (pets < allowedPets) {
-  console.log(petStatus);
-} else (pets === allowedPets);
-  console.log('I have enough pets');
-
-(pets > allowedPets);
+if ( pets < allowedPets ) {
+  console.log(petStatus = "I can have more pets");
+} else if( pets === allowedPets ) { // fixed
+ console.log(petStatus = 'I have enough pets');
+} else ( pets > allowedPets )  // fixed
 {
     console.log('Oh no, I have too many pets!');
 }
